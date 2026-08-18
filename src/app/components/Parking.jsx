@@ -1,21 +1,23 @@
 'use client'
 
-import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Map from '../map/Map'
-import ParkingSearch from './ParkingSearch'
+import React from 'react'
+import dynamic from 'next/dynamic'
+import Navbar from '../Navbar'
 import '../Parking.css'
 
-const Parking = () => {
-  const [location, setLocation] = useState(null)
+const Map = dynamic(
+  () => import('../map/Map'),
+  {
+    ssr: false,
+    loading: () => <div className="map-loading">Loading map...</div>
+  }
+)
 
+const Parking = () => {
   return (
     <div>
       <Navbar />
-
-      <Map location={location} />
-
-      <ParkingSearch setLocation={setLocation} />
+      <Map />
     </div>
   )
 }
