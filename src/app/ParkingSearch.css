@@ -1,0 +1,89 @@
+.parking-search {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 30px auto 0;
+
+  display: flex;
+  gap: 12px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  border: 1px solid #292a2f;
+  border-radius: 16px;
+
+  background: #121317;
+
+  transition: border-color 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #f5d90a;
+}
+
+.search-icon {
+  margin-right: 12px;
+
+  font-size: 24px;
+
+  color: #777980;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 15px;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #777980;
+}
+
+.parking-search button {
+  height: 58px;
+
+  padding: 0 30px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: #f5d90a;
+  color: #0b0c0f;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.parking-search button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .parking-search {
+    flex-direction: column;
+  }
+
+  .parking-search button {
+    width: 100%;
+  }
+}
