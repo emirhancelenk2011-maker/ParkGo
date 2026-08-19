@@ -1,8 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import Navbar from '../components/Navbar'
+import ParkingSearch from './ParkingSearch'
 import '../Parking.css'
 
 const Map = dynamic(
@@ -14,10 +15,15 @@ const Map = dynamic(
 )
 
 const Parking = () => {
+  const [location, setLocation] = useState(null)
+
   return (
     <div>
       <Navbar />
-      <Map />
+
+      <Map location={location} />
+
+      <ParkingSearch setLocation={setLocation} />
     </div>
   )
 }

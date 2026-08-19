@@ -32,7 +32,7 @@ const ParkingSearch = ({ setLocation }) => {
 
       const location = data[0]
 
-      setLocation({
+       setLocation({
         lat: Number(location.lat),
         lng: Number(location.lon),
         name: location.display_name,
