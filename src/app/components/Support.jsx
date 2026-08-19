@@ -1,125 +1,163 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import './Support.css'
+import Navbar from './Navbar'
 
 const Support = () => {
+  const [openFaq, setOpenFaq] = useState(null)
+
+  const faqs = [
+    {
+      question: 'How does ParkGo work?',
+      answer:
+        'ParkGo helps you discover available parking around your destination. Search for a place, explore nearby parking options, and choose the one that works best for you.'
+    },
+    {
+      question: 'Can I find parking anywhere in Tashkent?',
+      answer:
+        'ParkGo is designed to make finding parking across Tashkent easier. More locations and parking partners can be added as the platform grows.'
+    },
+    {
+      question: 'Can I rent out my parking spot?',
+      answer:
+        'Yes. ParkGo is designed to connect parking owners with drivers looking for convenient places to park.'
+    },
+    {
+      question: 'What if I have a problem with a parking location?',
+      answer:
+        'You can contact our support team and provide the details of the problem. We will help you find the right solution.'
+    }
+  ]
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index)
+  }
+
   return (
-    <section className="support-section">
-      <div className="support-container">
+    <div>
+       <main className="support-page">
 
-        <div className="support-header">
-          <span className="support-label">PARKGO SUPPORT</span>
-
+      <section className="support-hero">
+        <div className="support-hero-content">
           <h1>
-            How can we
-            <span> help?</span>
+            We're here to
+            <span> help.</span>
           </h1>
 
           <p>
-            Find answers to common questions or get in touch
-            with our support team.
+            Have a question about ParkGo? Find an answer below or
+            get in touch with our support team.
+          </p>
+        </div>
+      </section>
+
+      <section className="support-options">
+
+        <div className="support-card">
+          <div className="support-card-number">01</div>
+
+          <h2>Find an answer.</h2>
+
+          <p>
+            Browse the most common questions about parking,
+            locations, accounts and using ParkGo.
+          </p>
+
+          <a href="#faq">
+            View FAQs <span>↗</span>
+          </a>
+        </div>
+
+        <div className="support-card">
+          <div className="support-card-number">02</div>
+
+          <h2>Talk to us.</h2>
+
+          <p>
+            Can't find what you're looking for? Send us a message
+            and we'll help you figure it out.
+          </p>
+
+          <a href="#contact">
+            Contact support <span>↗</span>
+          </a>
+        </div>
+
+      </section>
+
+      <section className="faq-section" id="faq">
+
+        <div className="faq-heading">
+          <h2>
+            Frequently asked
+            <br />
+            questions.
+          </h2>
+
+          <p>
+            Everything you need to know about using ParkGo.
           </p>
         </div>
 
-        <div className="support-search">
-          <span>⌕</span>
+        <div className="faq-list">
 
-          <input
-            type="text"
-            placeholder="Search for help..."
-          />
+          {faqs.map((faq, index) => (
+            <div
+              className={`faq-item ${
+                openFaq === index ? 'active' : ''
+              }`}
+              key={index}
+            >
+              <button onClick={() => toggleFaq(index)}>
+                <span>{faq.question}</span>
 
-          <button>
-            Search
-          </button>
+                <span className="faq-icon">
+                  {openFaq === index ? '−' : '+'}
+                </span>
+              </button>
+
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+
         </div>
 
-        <div className="support-grid">
+      </section>
 
-          <div className="support-card">
-            <div className="support-icon">P</div>
+      <section className="contact-section" id="contact">
 
-            <h3>Finding Parking</h3>
+        <div className="contact-content">
 
-            <p>
-              Learn how to find available parking
-              spots near your destination.
-            </p>
+          <h2>
+            Still need
+            <span> help?</span>
+          </h2>
 
-            <button className="support-link">
-              Learn more →
-            </button>
-          </div>
+          <p>
+            Our support team is ready to help you with questions,
+            feedback or problems with ParkGo.
+          </p>
 
-          <div className="support-card">
-            <div className="support-icon">R</div>
+          <div className="contact-actions">
+            <a href="mailto:support@parkgo.uz" className="contact-button">
+              Contact support
+              <span>↗</span>
+            </a>
 
-            <h3>Reservations</h3>
-
-            <p>
-              Everything you need to know about
-              reserving a parking spot.
-            </p>
-
-            <button className="support-link">
-              Learn more →
-            </button>
-          </div>
-
-          <div className="support-card">
-            <div className="support-icon">$</div>
-
-            <h3>Payments</h3>
-
-            <p>
-              Questions about prices, payments,
-              refunds or transactions?
-            </p>
-
-            <button className="support-link">
-              Learn more →
-            </button>
-          </div>
-
-          <div className="support-card">
-            <div className="support-icon">A</div>
-
-            <h3>Account</h3>
-
-            <p>
-              Manage your account, profile and
-              personal information.
-            </p>
-
-            <button className="support-link">
-              Learn more →
-            </button>
+            <a href="tel:+998000000000" className="contact-phone">
+              +998 00 000 00 00
+            </a>
           </div>
 
         </div>
 
-        <div className="support-contact">
+      </section>
 
-          <div>
-            <span className="support-label">STILL NEED HELP?</span>
-
-            <h2>
-              Talk to the ParkGo team.
-            </h2>
-
-            <p>
-              Can't find what you're looking for?
-              Our team is ready to help.
-            </p>
-          </div>
-
-          <button className="contact-button">
-            Contact Support
-          </button>
-
-        </div>
-
-      </div>
-    </section>
+    </main>
+    </div>
   )
 }
 

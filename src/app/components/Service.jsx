@@ -1,153 +1,259 @@
+'use client'
+
 import React from 'react'
-import '../components/Service.css'
-import Navbar from '../components/Navbar'
-const Services = () => {
+import './Service.css'
+import Navbar from './Navbar'
+
+const Service = () => {
   return (
     <div>
       <Navbar/>
-      <section className="services-section">
-      <div className="services-container">
+       <main className="service-page">
 
-        <div className="services-header">
-          <span className="services-label">PARKGO SERVICES</span>
-
+      <section className="service-hero">
+        <div className="service-hero-content">
           <h1>
-            Everything you need
-            <span> before you park.</span>
+            Parking made
+            <span> simpler.</span>
           </h1>
 
           <p>
-            From finding the right parking spot to charging your car,
-            ParkGo makes every part of your journey easier.
+            ParkGo connects drivers with parking locations around their
+            destination, making parking in Tashkent faster and easier.
+          </p>
+        </div>
+      </section>
+
+      <section className="services-section">
+
+        <div className="section-heading">
+          <h2>Everything you need to park smarter.</h2>
+
+          <p>
+            From finding your destination to discovering nearby parking,
+            ParkGo brings the experience together in one place.
           </p>
         </div>
 
         <div className="services-grid">
 
-          <div className="service-card service-large">
+          <div className="service-card featured">
             <div className="service-number">01</div>
 
-            <div className="service-icon">P</div>
+            <div className="service-icon">⌖</div>
 
-            <h2>Find a Parking Spot</h2>
+            <h3>Find Parking</h3>
 
             <p>
-              Search for parking near your destination and
-              discover convenient spots around Tashkent.
+              Discover parking locations around your destination using
+              our interactive map.
             </p>
 
-            <div className="service-bottom">
-              <span>MAP SEARCH</span>
-              <span>→</span>
+            <div className="service-tag">
+              CORE SERVICE
             </div>
           </div>
 
           <div className="service-card">
             <div className="service-number">02</div>
 
-            <div className="service-icon">R</div>
+            <div className="service-icon">⌕</div>
 
-            <h2>Reserve Your Spot</h2>
+            <h3>Smart Search</h3>
 
             <p>
-              Choose a parking space ahead of time and
-              arrive knowing your spot is ready.
+              Search for a location in Tashkent and quickly find parking
+              options nearby.
             </p>
-
-            <div className="service-bottom">
-              <span>RESERVATIONS</span>
-              <span>→</span>
-            </div>
           </div>
 
           <div className="service-card">
             <div className="service-number">03</div>
 
-            <div className="service-icon">⚡</div>
+            <div className="service-icon">◉</div>
 
-            <h2>EV Charging</h2>
+            <h3>Interactive Map</h3>
 
             <p>
-              Find charging stations near you and keep
-              your electric vehicle ready for the road.
+              Explore parking locations visually and understand where
+              they are before you arrive.
             </p>
-
-            <div className="service-bottom">
-              <span>CHARGING</span>
-              <span>→</span>
-            </div>
           </div>
 
-          <div className="service-card service-wide">
+          <div className="service-card">
             <div className="service-number">04</div>
 
-            <div className="service-icon">M</div>
+            <div className="service-icon">★</div>
 
-            <h2>Private Parking & Memberships</h2>
+            <h3>Parking Discovery</h3>
 
             <p>
-              Access private parking spaces and membership
-              options designed for people who park regularly.
+              Compare nearby options and choose a parking location that
+              works best for your destination.
             </p>
-
-            <div className="service-bottom">
-              <span>MEMBERSHIPS</span>
-              <span>→</span>
-            </div>
           </div>
 
         </div>
 
-        <div className="how-section">
+      </section>
 
-          <div className="how-header">
-            <span className="services-label">HOW IT WORKS</span>
+      <section className="driver-section">
 
-            <h2>
-              Parking made
-              <span> simple.</span>
-            </h2>
-          </div>
+        <div className="driver-content">
 
-          <div className="how-steps">
+          <h2>
+            Less searching.
+            <br />
+            More driving.
+          </h2>
 
-            <div className="how-step">
-              <span>01</span>
-              <h3>Search</h3>
-              <p>
-                Tell ParkGo where you're going.
-              </p>
+          <p>
+            ParkGo is designed around one simple idea: drivers should
+            spend less time looking for parking and more time getting
+            where they need to go.
+          </p>
+
+          <div className="driver-flow">
+
+            <div>
+              <strong>01</strong>
+              <p>Search</p>
             </div>
 
-            <div className="step-line"></div>
-
-            <div className="how-step">
-              <span>02</span>
-              <h3>Choose</h3>
-              <p>
-                Compare parking spots near you.
-              </p>
+            <div>
+              <strong>02</strong>
+              <p>Discover</p>
             </div>
 
-            <div className="step-line"></div>
+            <div>
+              <strong>03</strong>
+              <p>Choose</p>
+            </div>
 
-            <div className="how-step">
-              <span>03</span>
-              <h3>Park</h3>
-              <p>
-                Arrive and park without the hassle.
-              </p>
+            <div>
+              <strong>04</strong>
+              <p>Park</p>
             </div>
 
           </div>
 
         </div>
 
-      </div>
-    </section>
+      </section>
+
+      <section className="business-section">
+
+        <div className="business-header">
+
+          <h2>
+            Turn parking spaces
+            <br />
+            into opportunities.
+          </h2>
+
+          <p>
+            ParkGo is also designed to connect parking businesses with
+            drivers who are actively looking for a place to park.
+          </p>
+
+        </div>
+
+        <div className="business-grid">
+
+          <div>
+            <strong>01</strong>
+
+            <h3>Reach more drivers</h3>
+
+            <p>
+              Make your parking location easier for drivers to discover.
+            </p>
+          </div>
+
+          <div>
+            <strong>02</strong>
+
+            <h3>Increase visibility</h3>
+
+            <p>
+              Put your parking location directly on the ParkGo map.
+            </p>
+          </div>
+
+          <div>
+            <strong>03</strong>
+
+            <h3>Grow with ParkGo</h3>
+
+            <p>
+              Build your digital presence as ParkGo expands across
+              Tashkent and beyond.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="future-section">
+
+        <h2>
+          We're building more
+          <br />
+          than a parking map.
+        </h2>
+
+        <p>
+          ParkGo's long-term vision is to create a complete parking
+          ecosystem connecting drivers, parking businesses and cities.
+        </p>
+
+        <div className="future-list">
+
+          <div>
+            <span>→</span>
+            Real-time parking availability
+          </div>
+
+          <div>
+            <span>→</span>
+            Parking reservations
+          </div>
+
+          <div>
+            <span>→</span>
+            User accounts and reviews
+          </div>
+
+          <div>
+            <span>→</span>
+            Expansion to more cities
+          </div>
+
+        </div>
+
+      </section>
+
+      <section className="service-cta">
+
+        <span>PARKGO</span>
+
+        <h2>
+          Find your spot.
+          <br />
+          Get where you're going.
+        </h2>
+
+        <p>
+          Parking in Tashkent doesn't have to be complicated.
+        </p>
+
+      </section>
+
+    </main>
     </div>
-    
+   
   )
 }
 
-export default Services
+export default Service
